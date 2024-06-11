@@ -181,7 +181,8 @@ dev.off()
 ## Read dataset
 pigmentation_experimental_table <- read_excel("Pigmentation_experimental_scoring.xlsx")
 
-pigmentation_experimental_table <- pigmentation_experimental_table %>% mutate_at('timepoint_ID', as.factor)
+experimental_levels = c("0","1","2")
+pigmentation_experimental_table <- pigmentation_experimental_table %>% mutate(timepoint_ID = factor(timepoint_ID, levels = experimental_levels, ordered = TRUE))
 pigmentation_experimental_table <- pigmentation_experimental_table %>% mutate_at('mesocosm', as.factor)
 pigmentation_experimental_table$timepointID_mesocosm <- paste(pigmentation_experimental_table$timepoint_ID, "-", pigmentation_experimental_table$mesocosm)
 
