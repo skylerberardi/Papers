@@ -19,7 +19,8 @@ library(plotrix)
 ## Read dataset
 pigmentation_latitude_table <- read_excel("Pigmentation_latitudinal_scoring.xlsx")
 
-pigmentation_latitude_table <- pigmentation_latitude_table %>% mutate_at('latitude_pop', as.factor)
+latitude_levels <- c("1","2","3","4","5","6")
+pigmentation_latitude_table <- pigmentation_latitude_table %>% mutate(latitude_pop = factor(latitude_pop, levels = latitude_levels, ordered = TRUE))
 pigmentation_latitude_table <- pigmentation_latitude_table %>% mutate_at('isofemale_line', as.factor)
 
 view(pigmentation_latitude_table)
