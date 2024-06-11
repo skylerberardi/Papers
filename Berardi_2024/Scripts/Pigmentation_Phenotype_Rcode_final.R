@@ -98,10 +98,13 @@ dev.off()
 ## Read dataset
 pigmentation_seasonal_table <- read_excel("Pigmentation_seasonal_scoring.xlsx")
 
-pigmentation_seasonal_table <- pigmentation_seasonal_table %>% mutate_at('year', as.factor)
+seasonal_year_levels <- c("2010","2011","2012","2013","2014","2015")
+seasonal_season_levels <- c("1_spring","2_fall")
+
+pigmentation_seasonal_table <- pigmentation_seasonal_table %>% mutate(year = factor(year, levels = seasonal_year_levels, ordered = TRUE))
+pigmentation_seasonal_table <- pigmentation_seasonal_table %>% mutate(season = factor(season, levels = seasonal_season_levels, ordered = TRUE))
 pigmentation_seasonal_table <- pigmentation_seasonal_table %>% mutate_at('timepoint_ID', as.factor)
 pigmentation_seasonal_table <- pigmentation_seasonal_table %>% mutate_at('isofemale_line', as.factor)
-pigmentation_seasonal_table <- pigmentation_seasonal_table %>% mutate_at('season', as.factor)
 pigmentation_seasonal_table$year_season <- paste(pigmentation_seasonal_table$year, "-", pigmentation_seasonal_table$season)
 
 view(pigmentation_seasonal_table)
