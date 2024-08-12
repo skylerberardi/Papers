@@ -64,4 +64,4 @@ ORCHARD ANALYSIS
 
 #############
 
-All necessary data can be found in the directory called "SupplementaryFiles"
+All necessary files except the main data can be found in the directory called "SupplementaryFiles". The DEST data is from the v1 DEST release and can be found on their website (dest.bio).
