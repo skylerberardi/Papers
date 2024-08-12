@@ -1,0 +1,6 @@
+V1 V2 V3
+1 FL_ho_10_spring 25.5 39
+2 GA_at_14_spring 33.95 44
+3 MA_la_14_spring 42.45 32
+4 PA_li_14_spring 39.88 92
+5 VA_ch_14_spring 38 104
