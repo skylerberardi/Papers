@@ -22,20 +22,23 @@ pigmentation_latitude_table <- read_excel("Pigmentation_latitudinal_scoring.xlsx
 latitude_levels <- c("1","2","3","4","5","6")
 pigmentation_latitude_table <- pigmentation_latitude_table %>% mutate(latitude_pop = factor(latitude_pop, levels = latitude_levels, ordered = TRUE))
 pigmentation_latitude_table <- pigmentation_latitude_table %>% mutate_at('isofemale_line', as.factor)
+pigmentation_latitude_table <- pigmentation_latitude_table %>% mutate_at('latitude', as.numeric)
 
 view(pigmentation_latitude_table)
 
 
 ## Statistics: East Coast Latitudinal Cline
 # Linear mixed effects model: pigmentation scores ~ latitude, random = ~1 | isofemale line
-LM_latitude_1 <- lme(fixed = pigmentation_score ~ latitude_pop, random = ~1 | isofemale_line, data = pigmentation_latitude_table)
-anova(LM_latitude_1)
-summary(LM_latitude_1)
+LM_latitude <- lme(fixed = pigmentation_score ~ latitude, random = ~1 | isofemale_line, data = pigmentation_latitude_table)
+anova(LM_latitude)
+summary(LM_latitude)
 LM_latitude_1$coefficients
 LM_latitude_1$residuals
 
 
-## Extracting means and standard errors from model for plotting
+## Plotting latitudinal data
+LM_latitude_1 <- lme(fixed = pigmentation_score ~ latitude_pop, random = ~1 | isofemale_line, data = pigmentation_latitude_table)
+# Extracting means and standard errors from model with latitudes ranked for plotting
 LM_latitude_means_1 <- emmeans(LM_latitude_1, ~ latitude_pop)
 latitude_plot_1 <- as.data.frame(LM_latitude_means_1)
 latitude_plot_1$dataset <- c(rep("latitudinal",6))
