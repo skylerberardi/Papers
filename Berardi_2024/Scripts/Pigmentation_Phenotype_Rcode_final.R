@@ -59,7 +59,7 @@ ggplot(pigmentation_latitude_table, aes(x=latitude_pop, y=pigmentation_score)) +
   ylab("Mean Pigmentation Score") +
   ggtitle("East Coast Latitudinal Cline")+
   theme_classic() +
-  theme(legend.position = "none") + 
+  theme(legend.position = "none", text = element_text(size=14)) + 
   scale_x_discrete(labels=c("25.28","30.2","33.95","38.02","39.88","42.45"))+
   scale_color_manual(values=c("#823830")) +
   #Adding mean points
@@ -82,7 +82,7 @@ ggplot(pigmentation_latitude_table, aes(x=latitude_pop, y=pigmentation_score)) +
   ylab("Mean Pigmentation Score") +
   ggtitle("East Coast Latitudinal Cline")+
   theme_classic() +
-  theme(legend.position = "none") + 
+  theme(legend.position = "none", text = element_text(size=14)) + 
   scale_x_discrete(labels=c("25.28","30.2","33.95","38.02","39.88","42.45"))+
   scale_color_manual(values=c("#823830")) +
   #Adding mean points
@@ -145,6 +145,7 @@ ggplot(seasonal_plot_1, aes(x= year_season, y=emmean, group=1)) +
   geom_line(color="#823830")+
   geom_point(color="#823830")+
   theme_classic() +
+  theme(text = element_text(size=14)) +
   ggtitle("Seasonal Patterns (Media, PA)") +
   xlab("Timepoint")+
   ylab("Mean Pigmentation Score") +
@@ -163,6 +164,7 @@ ggplot(seasonal_plot_1, aes(x= year_season, y=emmean, group=1)) +
   geom_line(color="#823830")+
   geom_point(color="#823830")+
   theme_classic() +
+  theme(text = element_text(size=14)) +
   ggtitle("Seasonal Patterns (Media, PA)") +
   xlab("Timepoint")+
   ylab("Mean Pigmentation Score") +
@@ -246,7 +248,7 @@ ggplot(experimental_mesocosm_means, aes(x=timepoint_ID, y=mesocosm_mean_pigscore
   ylim(7,14.7) +
   scale_x_discrete(labels=c("August 5","October 5"))+
   scale_color_manual(values=c("#34434F","#34434F","#34434F","#34434F","#34434F","#34434F","#34434F","#34434F","#34434F"))+
-  theme(legend.position = "none") +
+  theme(legend.position = "none", text = element_text(size=14)) +
   #Adding average points
   geom_line(data=experimental_plot_1, aes(x=timepoint_ID, y=emmean, group=1), linewidth=2, color="#823830", inherit.aes = FALSE) +
   geom_point(data=experimental_plot_1, aes(x=timepoint_ID, y=emmean, group=1), size=2.5, color="#823830", inherit.aes = FALSE) +
@@ -270,7 +272,7 @@ ggplot(experimental_mesocosm_means, aes(x=timepoint_ID, y=mesocosm_mean_pigscore
   ylim(7,14.7) +
   scale_x_discrete(labels=c("August 5","October 5"))+
   scale_color_manual(values=c("#34434F","#34434F","#34434F","#34434F","#34434F","#34434F","#34434F","#34434F","#34434F"))+
-  theme(legend.position = "none") +
+  theme(legend.position = "none", text = element_text(size=14)) +
   #Adding average points
   geom_line(data=experimental_plot_1, aes(x=timepoint_ID, y=emmean, group=1), linewidth=2, color="#823830", inherit.aes = FALSE) +
   geom_point(data=experimental_plot_1, aes(x=timepoint_ID, y=emmean, group=1), size=2.5, color="#823830", inherit.aes = FALSE) +
