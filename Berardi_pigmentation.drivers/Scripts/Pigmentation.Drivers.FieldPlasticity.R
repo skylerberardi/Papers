@@ -1,6 +1,6 @@
 ##### Skyler Berardi; contact: berardis@sas.upenn.edu
 
-##### pigmentation measured from flies directly sampled from mesocosms (no common garden treatment)
+##### pigmentation measured from flies directly sampled from control cages (no common garden treatment)
 ##### 2019 interspecific competition experiment
 
 
